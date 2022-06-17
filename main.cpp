@@ -7,7 +7,17 @@ using namespace std ;
 
 int main () {
 
-    vector <int > vec = {1,2,3,4,5,6};
+    vector <int > vec;
+    vec.resize(20);// enter number of team here
+    int counter = 0 ;
+    auto func = [&](int & a){a= counter; counter++ ;};
+
+    for_each(vec.begin(),vec.end(),func);
+
+//    auto func2= [](const auto & a , const auto &b  ){ return a > b;};
+//    sort(vec.begin(),vec.end(),func2);
+
+
     vector <string > withWho;
     withWho.resize(vec.size()/2);
     int temp;
